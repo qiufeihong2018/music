@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bejing"
+    tools:context=".MainActivity" >
+
+    <!-- 标题栏 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#33ffffff"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <ImageView
+            android:id="@+id/iv_title_bar_logo"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/title" />
+
+        <TextView
+            android:id="@+id/tv_title_bar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_title_bar_logo"
+            android:text="@string/app_name"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <!-- 内容 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title_bar"
+        android:padding="12dp" >
+
+        <!-- 按钮区域 -->
+
+        <RelativeLayout
+            android:id="@+id/re_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lv_musics"
+            android:padding="12dp" >
+
+            <TextView
+                android:id="@+id/left_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="00:00"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/right_bar"
+                android:layout_toRightOf="@+id/left_bar"
+                android:max="100"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/right_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="00:00"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <!-- 歌曲列表 -->
+
+        <ListView
+            android:id="@+id/lv_musics"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp" >
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/rl_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true" >
+
+            <ImageButton
+                android:id="@+id/play_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/button_mode_repeat" />
+
+            <ImageButton
+                android:id="@+id/ib_play_or_pause"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/selector_button_play" />
+
+            <ImageButton
+                android:id="@+id/ib_previous"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/ib_play_or_pause"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/selector_button_previous" />
+
+            <ImageButton
+                android:id="@+id/ib_next"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ib_play_or_pause"
+                android:background="@null"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/selector_button_next" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
